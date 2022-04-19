@@ -1,0 +1,30 @@
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+
+
+entity Lab_4 is
+Port (A: in std_logic;
+      B: in std_logic;
+      C: in std_logic;
+      D: in std_logic;
+      Z: out std_logic );
+end Lab_4;
+
+architecture Behavioral of Lab_4 is
+signal  AS_out: std_logic;
+signal  BS_out: std_logic;
+signal  CS_out: std_logic; 
+signal  DS_out: std_logic; 
+
+
+begin
+AS_out <= A and not D;
+BS_out <= A and C;
+CS_out <= not B and C and not D;
+DS_out <= not A and B and not C;
+
+Z <= AS_out or BS_out or CS_out or DS_out;
+
+end Behavioral;
